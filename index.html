@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipping Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .tipping-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+        .thank-you-message {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .tipping-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tipping-option {
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 6.35mm 6.35mm; /* 0.5 inch / 2 (on each side) */
+            flex: 1 1 40%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .tipping-option:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .picture-holder {
+            display: none;
+            margin-top: 20px;
+        }
+        .picture-holder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="tipping-container">
+        <div class="thank-you-message">Thank you for your business</div>
+        <div class="tipping-options">
+            <div class="tipping-option" onclick="showQRCode('2.png')">$2</div>
+            <div class="tipping-option" onclick="showQRCode('5.png')">$5</div>
+            <div class="tipping-option" onclick="showQRCode('10.png')">$10</div>
+            <div class="tipping-option" onclick="showQRCode('cat.png')">Custom</div>
+        </div>
+        <div class="picture-holder" id="qrCodeHolder">
+            <img id="qrCodeImage" src="" alt="meme">
+        </div>
+    </div>
+
+    <script>
+        function showQRCode(imageSrc) {
+            document.getElementById('qrCodeImage').src = imageSrc;
+            document.getElementById('qrCodeHolder').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
